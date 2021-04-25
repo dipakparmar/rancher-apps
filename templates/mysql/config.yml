@@ -1,0 +1,5 @@
+name: MYSQL
+description: MYSQL
+version: 0.1.0-dedicated-mysql
+category: Apps
+maintainer: dipakparmar <hello@dipak.tech>

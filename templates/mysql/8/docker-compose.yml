@@ -1,0 +1,16 @@
+version: "2"
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${mysql_pass}
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: project=${project},mount=mounted
+  phpMyAdmin:
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      - mysql:db
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: project=${project}
